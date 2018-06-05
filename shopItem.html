@@ -1,0 +1,13 @@
+<div>
+  <div>
+  Published at:<span ng-bind="item.published |date"></span>&nbsp; Promotion:{{promo}}
+  <button ng-click="pickMe({selectedItem:item.name})">Buy Me</button>
+  </div>
+  <div>
+    <div ng-transclude></div>
+    Name:<span ng-bind="item.name"></span>
+    Condition:<span ng-bind="item.condition"></span>
+    Price:<span ng-bind="item.price|currency"></span>
+    Brand:<span ng-bind="item.brand"></span>
+  </div>
+</div>  
