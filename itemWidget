@@ -1,0 +1,22 @@
+directive('itemWidget',[function(){
+  return{
+          restrict:'E',
+          replace:true,
+          transclude:true,
+          require:'^shoppingWidget',
+          scope:{
+                  item='=',
+                  promo='@',
+                  pickMe:'&onSelect'
+                 },
+          templateUrl:'shopItem.html',
+          link:function(scope,element,attrs,cartCtrl){
+                        element.on('click',function(event){
+                                                            element.htlm("Thanks for Purchasing this item");
+                                                            element.css({color:green;});
+                                                            cartCtrl.addItemToCart(scope.item);
+                                                            scope.$apply();
+                                                           });
+                                                     }
+       }
+ }]);      
