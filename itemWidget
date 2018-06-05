@@ -19,4 +19,17 @@ directive('itemWidget',[function(){
                                                            });
                                                      }
        }
- }]);      
+ }]);  
+ directive('shoppingWidget',[function(){
+  return{
+          restrict:'E',
+          transclude:true,
+          templateUrl:'shopDetails.html',
+          scope:true,
+          controller:['$scope',function($scope){
+                                $scope.cart=[];
+                                var self=this;
+                                self.addItemToCart=function(item){
+                                $scope.cart.push(item);};}]
+      }
+}]);      
