@@ -1,0 +1,26 @@
+<div>
+  <div class="panel panel-success">
+  <div class="panel-heading">
+    Your shopping Cart
+  </div>
+    <div class="panel-body">
+    <ul class="list-group">
+      <li class="list-group-item ng-show="cart.length >0">
+      Total Items:
+      <span class="badge">{{cart.length}}</spa>
+      </li>
+      <li class="list-group-item" ng-hide="cart.length >0"> 
+      Your cart is empty
+      </li>
+     </ul>
+        <ul class="list-group">
+          <li class="list-group-item" ng-repeat="item in cart">
+          {{item.name}} is of price {{item.price}}
+          </li>
+        </ul>
+      </div>
+   </div>
+ <div ng-transclude></div>
+</div>
+     
+      
